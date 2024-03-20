@@ -53,8 +53,8 @@ class User():
         """
         if pwd is None or type(pwd) is not str:
             return False
-        elif self.__password is None:
-            return False
+        # elif self.__password is None:
+        #     return False
         else:
             return hashlib.md5(pwd.encode()).hexdigest().lower() == self.__password
 
