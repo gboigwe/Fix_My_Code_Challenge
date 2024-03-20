@@ -10,7 +10,7 @@ ARGV.each do |arg|
     next if arg !~ /^-?[0-9]+$/
 
     # convert to integer
-    i_arg = arg:to_i
+    i_arg = arg.to_i
     
     # insert result at the right position
     is_inserted = false
@@ -18,10 +18,10 @@ ARGV.each do |arg|
     l = result.size
     while !is_inserted && i < l do
         if result[i] < i_arg
-            i += 1
-        else
             result.insert(i - 1, i_arg)
             is_inserted = true
+        else
+            i += 1
             break
         end
     end
